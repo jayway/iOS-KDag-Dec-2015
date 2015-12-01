@@ -25,7 +25,7 @@ class ViewController: UIViewController {
         
         
         try! realm.write {
-            realm.add(p)
+            realm.add(p, update: true)
         }
     }
 
