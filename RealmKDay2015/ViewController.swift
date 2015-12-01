@@ -15,18 +15,14 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        let p = Person()
-        p.name = "Petar"
-        p.age = 26
-        
-        print(p.description)
-        
         let realm = try! Realm()
         
+        let allPersons = realm.objects(Person)
         
-        try! realm.write {
-            realm.add(p, update: true)
+        if let firstPerson = allPersons.first {
+            print(firstPerson.description)
         }
+        
     }
 
     override func didReceiveMemoryWarning() {
