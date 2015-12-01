@@ -15,6 +15,8 @@ class Person: Object {
     dynamic var name: String = ""
     dynamic var age: Int = 0
     
+    var image: UIImage = UIImage()
+    
     override var description: String {
         return "\(name) is \(age) years old"
     }
